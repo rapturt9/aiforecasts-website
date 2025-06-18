@@ -8,6 +8,12 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const navItems = [
+    { name: 'Our Mission', href: '#our-mission' },
+    { name: 'Performance', href: '/performance' },
+    { name: 'Methodology', href: '/methodology' },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -17,37 +23,31 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Our Mission', href: '#our-mission' },
-    { name: 'Performance', href: '/performance' },
-    { name: 'Methodology', href: '/methodology' }
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-md border-b border-border' 
+        isScrolled
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 lg:space-x-4">
             <Logo size="md" />
-            <div className="text-2xl font-bold text-foreground">
-              Forecast<span className="text-accent">Labs</span>
+            <div className="text-2xl lg:text-3xl font-bold text-white">
+              Forecast<span className="text-indigo-400">Labs</span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8 xl:space-x-12">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                className="text-white hover:text-indigo-400 transition-colors duration-200 font-medium text-lg px-3 py-2 rounded-lg hover:bg-white/10"
               >
                 {item.name}
               </a>
@@ -56,38 +56,44 @@ export const Header: React.FC = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <button className="bg-accent text-accent-foreground px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors duration-200 font-medium">
+            <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 font-medium text-lg shadow-lg hover:shadow-xl">
               Explore the Data
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground hover:text-accent transition-colors duration-200"
+            className="lg:hidden p-2 text-white hover:text-indigo-400 transition-colors duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-border">
-            <nav className="flex flex-col space-y-4 pt-4">
+          <div className="lg:hidden mt-4 pt-4 border-t border-white/10">
+            <nav className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                  className="text-white hover:text-indigo-400 transition-colors duration-200 font-medium text-lg px-3 py-3 rounded-lg hover:bg-white/10"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <button className="bg-accent text-accent-foreground px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors duration-200 font-medium w-fit">
+            </nav>
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <button className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-200 font-medium text-lg">
                 Explore the Data
               </button>
-            </nav>
+            </div>
           </div>
         )}
       </div>
