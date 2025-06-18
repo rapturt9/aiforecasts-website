@@ -1,96 +1,46 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-indigo-900/20" />
       
-      <div className="max-w-7xl mx-auto py-32 sm:py-40 lg:py-48 xl:py-56 relative z-10 text-center">
-        <motion.div
-          className="space-y-16 sm:space-y-20 lg:space-y-24 xl:space-y-28"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 lg:py-40 relative z-10">
+        <div className="text-center space-y-8 sm:space-y-12 lg:space-y-16">
           {/* Headline */}
-          <div className="space-y-10 sm:space-y-12 lg:space-y-16 xl:space-y-20">
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-tight text-white">
               Charting a{' '}
-              <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
                 Safer Future
               </span>
-            </motion.h1>
+            </h1>
             
-            <motion.p 
-              className="text-lg sm:text-xl lg:text-2xl text-secondary leading-relaxed max-w-5xl mx-auto px-4 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-gray-300 leading-relaxed max-w-3xl sm:max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
               We use advanced AI and Structural Causal Models to predict the future with unprecedented accuracy, 
               providing open intelligence to help humanity navigate tomorrow's challenges.
-            </motion.p>
+            </p>
           </div>
 
           {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-8 sm:gap-10 lg:gap-12 justify-center items-center pt-12 sm:pt-16 lg:pt-20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button className="btn-primary flex items-center space-x-4 text-lg sm:text-xl lg:text-2xl px-10 sm:px-12 lg:px-14 py-5 sm:py-6 lg:py-7 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center items-center pt-8 sm:pt-12 lg:pt-16">
+            <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium text-base sm:text-lg lg:text-xl px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 w-full sm:w-auto rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-3">
               <span>See Our Predictions</span>
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             <a 
               href="#performance" 
-              className="btn-secondary flex items-center space-x-4 text-lg sm:text-xl lg:text-2xl px-10 sm:px-12 lg:px-14 py-5 sm:py-6 lg:py-7 w-full sm:w-auto"
+              className="border-2 border-white/30 text-white hover:bg-white/10 font-medium text-base sm:text-lg lg:text-xl px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-6 w-full sm:w-auto rounded-xl transition-all duration-300 flex items-center justify-center space-x-3"
             >
-              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>📊 View Performance</span>
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
-
-      {/* Floating elements for visual interest */}
-      <motion.div
-        className="absolute top-20 right-20 w-2 h-2 bg-accent rounded-full opacity-60"
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.6, 1, 0.6]
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-      />
-      <motion.div
-        className="absolute bottom-40 left-20 w-1 h-1 bg-purple-500 rounded-full opacity-40"
-        animate={{
-          y: [0, -15, 0],
-          opacity: [0.4, 0.8, 0.4]
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 1
-        }}
-      />
     </section>
   );
 };
