@@ -53,7 +53,7 @@ export const ValueProposition: React.FC = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden" id="our-mission">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
       
@@ -128,9 +128,9 @@ export const ValueProposition: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <button className="btn-tertiary">
+          <a href="/methodology" className="btn-tertiary">
             Learn More About Our Methodology
-          </button>
+          </a>
         </motion.div>
       </div>
 

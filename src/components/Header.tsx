@@ -45,13 +45,17 @@ export const Header: React.FC = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-2">
-            {['Our Mission', 'Performance', 'Our Approach'].map((item) => (
+            {[
+              { name: 'Our Mission', href: '#our-mission' },
+              { name: 'Performance', href: '#performance' },
+              { name: 'Methodology', href: '/methodology' }
+            ].map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                key={item.name}
+                href={item.href}
                 className="nav-link text-foreground font-medium"
               >
-                {item}
+                {item.name}
               </a>
             ))}
           </nav>
@@ -83,14 +87,18 @@ export const Header: React.FC = () => {
             transition={{ duration: 0.3 }}
           >
             <div className="px-6 py-4 space-y-4">
-              {['Our Mission', 'Performance', 'Our Approach'].map((item) => (
+              {[
+                { name: 'Our Mission', href: '#our-mission' },
+                { name: 'Performance', href: '#performance' },
+                { name: 'Methodology', href: '/methodology' }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
+                  key={item.name}
+                  href={item.href}
                   className="block nav-link text-foreground font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
               <button 

@@ -46,20 +46,23 @@ export const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="btn-group"
+              className="flex flex-col sm:flex-row gap-4 items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <button className="btn-primary flex items-center justify-center space-x-2">
-                <span>Explore the Causal Map</span>
-                <ArrowRight className="w-5 h-5" />
+              <button className="btn-primary flex items-center space-x-2">
+                <span>Explore Forecasts</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
               
-              <button className="btn-secondary flex items-center justify-center space-x-2">
-                <TrendingUp className="w-5 h-5" />
-                <span>See Our Performance</span>
-              </button>
+              <a 
+                href="#performance" 
+                className="btn-secondary flex items-center space-x-2"
+              >
+                <TrendingUp className="w-4 h-4" />
+                <span>View Performance</span>
+              </a>
             </motion.div>
           </motion.div>
 
