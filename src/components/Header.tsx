@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
@@ -18,100 +17,81 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { name: 'Our Mission', href: '#our-mission' },
+    { name: 'Performance', href: '/performance' },
+    { name: 'Methodology', href: '/methodology' }
+  ];
+
   return (
-    <motion.header
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass backdrop-blur-md border-b border-glass-border' 
+          ? 'bg-background/80 backdrop-blur-md border-b border-border' 
           : 'bg-transparent'
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 py-5 sm:py-6 lg:py-8">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <motion.div 
-            className="flex items-center space-x-3 sm:space-x-4"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
+          <div className="flex items-center space-x-3">
             <Logo size="md" />
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
+            <div className="text-2xl font-bold text-foreground">
               Forecast<span className="text-accent">Labs</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
-            {[
-              { name: 'Our Mission', href: '#our-mission' },
-              { name: 'Performance', href: '/performance' },
-              { name: 'Methodology', href: '/methodology' }
-            ].map((item) => (
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="nav-link text-foreground font-medium text-sm lg:text-base xl:text-lg"
+                className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
             ))}
           </nav>
 
+          {/* CTA Button */}
+          <div className="hidden lg:block">
+            <button className="bg-accent text-accent-foreground px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors duration-200 font-medium">
+              Explore the Data
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-foreground hover:text-accent transition-colors duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-
-          {/* CTA Button - Desktop */}
-          <button className="btn-primary hidden lg:block text-sm lg:text-base xl:text-lg px-4 lg:px-6 xl:px-8 py-2 lg:py-3 xl:py-4">
-            Explore the Data
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <motion.div
-            className="md:hidden glass backdrop-blur-md border-t border-glass-border"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-4 sm:px-6 py-6 space-y-6">
-              {[
-                { name: 'Our Mission', href: '#our-mission' },
-                { name: 'Performance', href: '/performance' },
-                { name: 'Methodology', href: '/methodology' }
-              ].map((item) => (
+          <div className="lg:hidden mt-4 pb-4 border-t border-border">
+            <nav className="flex flex-col space-y-4 pt-4">
+              {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block nav-link text-foreground font-medium text-lg py-2"
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <button 
-                className="btn-primary w-full mt-6 text-lg py-4"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
+              <button className="bg-accent text-accent-foreground px-6 py-2 rounded-lg hover:bg-accent/90 transition-colors duration-200 font-medium w-fit">
                 Explore the Data
               </button>
-            </div>
-          </motion.div>
+            </nav>
+          </div>
         )}
-      </AnimatePresence>
-    </motion.header>
+      </div>
+    </header>
   );
 };
 

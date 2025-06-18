@@ -1,7 +1,4 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Trophy, TrendingUp, Target, Award } from 'lucide-react';
 
 export const KeyResults: React.FC = () => {
@@ -49,91 +46,78 @@ export const KeyResults: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 sm:py-32 md:py-40 lg:py-48 xl:py-56 px-4 sm:px-6 lg:px-8" id="performance">
-      <div className="max-w-8xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-24 sm:mb-28 lg:mb-36 xl:mb-44"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 sm:mb-10 lg:mb-12 xl:mb-16 leading-tight">
+    <section className="py-20 px-6 bg-background" id="performance">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-6 leading-tight">
             Proven <span className="text-accent">Performance</span>
           </h2>
-          <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-secondary max-w-6xl mx-auto leading-relaxed px-6 sm:px-8 lg:px-12">
+          <p className="text-xl text-secondary max-w-4xl mx-auto leading-relaxed">
             Our AI consistently outperforms expert human forecasters across multiple domains, 
             delivering superior accuracy with rigorous scientific methodology.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Highlighted Achievement - Moved to top for prominence */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-16 sm:p-20 lg:p-24 xl:p-28 text-center bg-accent/5 border border-accent/20 mb-24 sm:mb-28 lg:mb-36 xl:mb-44 rounded-3xl"
-        >
-          <div className="flex flex-col sm:flex-row items-center justify-center mb-10 sm:mb-12 lg:mb-16 xl:mb-20">
-            <Trophy className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 text-accent mb-6 sm:mb-0 sm:mr-6 lg:mr-8" />
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold">🏆 Key Achievement</h3>
+        {/* Key Achievement Card */}
+        <div className="bg-accent/5 border border-accent/20 rounded-2xl p-12 text-center mb-16">
+          <div className="flex items-center justify-center mb-8">
+            <Trophy className="w-12 h-12 text-accent mr-4" />
+            <h3 className="text-4xl font-bold">🏆 Key Achievement</h3>
           </div>
-          <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-12 sm:mb-16 lg:mb-20 xl:mb-24 max-w-6xl mx-auto leading-relaxed px-6 sm:px-8 lg:px-12">
+          <p className="text-xl mb-12 max-w-4xl mx-auto leading-relaxed">
             <span className="text-accent font-semibold">ForecastLabs AI outperforms superforecasters</span> on Manifold Markets 
             with statistical significance, demonstrating superior accuracy in real-world prediction scenarios.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 mb-10 sm:mb-12 lg:mb-16">
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-card/50 rounded-2xl border border-border hover:border-accent/30 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-accent mb-4 sm:mb-5 lg:mb-6">0.082</div>
-              <div className="text-secondary font-medium text-base sm:text-lg lg:text-xl leading-relaxed">AI Brier Score</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-card/50 rounded-xl p-8 border border-border">
+              <div className="text-5xl font-bold text-accent mb-3">0.082</div>
+              <div className="text-secondary font-medium">AI Brier Score</div>
             </div>
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-card/50 rounded-2xl border border-border hover:border-secondary/30 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-secondary mb-4 sm:mb-5 lg:mb-6">0.134</div>
-              <div className="text-secondary font-medium text-base sm:text-lg lg:text-xl leading-relaxed">Human Brier Score</div>
+            <div className="bg-card/50 rounded-xl p-8 border border-border">
+              <div className="text-5xl font-bold text-secondary mb-3">0.134</div>
+              <div className="text-secondary font-medium">Human Brier Score</div>
             </div>
-            <div className="p-8 sm:p-10 lg:p-12 xl:p-14 bg-card/50 rounded-2xl border border-border hover:border-green-400/30 transition-all duration-300">
-              <div className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-green-400 mb-4 sm:mb-5 lg:mb-6">38.8%</div>
-              <div className="text-secondary font-medium text-base sm:text-lg lg:text-xl leading-relaxed">Better Performance</div>
+            <div className="bg-card/50 rounded-xl p-8 border border-border">
+              <div className="text-5xl font-bold text-green-400 mb-3">38.8%</div>
+              <div className="text-secondary font-medium">Better Performance</div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 lg:gap-16 xl:gap-20 mb-24 sm:mb-28 lg:mb-36 xl:mb-44">
-          {keyMetrics.map((metric, index) => (
-            <motion.div
-              key={metric.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
-              className={`glass-card p-8 sm:p-10 lg:p-12 xl:p-14 text-center hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 ${metric.bgColor} ${metric.borderColor} border rounded-2xl`}
-            >
-              <metric.icon className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 mx-auto mb-6 sm:mb-8 lg:mb-10 xl:mb-12 ${metric.color}`} />
-              <h3 className="font-bold text-xl sm:text-2xl lg:text-3xl xl:text-4xl mb-3 sm:mb-4 lg:mb-5 xl:mb-6 leading-tight">{metric.title}</h3>
-              <p className="text-secondary text-sm sm:text-base lg:text-lg xl:text-xl mb-4 sm:mb-5 lg:mb-6 xl:mb-8 leading-relaxed">{metric.subtitle}</p>
-              <div className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 lg:mb-5 xl:mb-6 ${metric.color}`}>
-                {metric.value}
+        {/* Performance Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {keyMetrics.map((metric) => {
+            const IconComponent = metric.icon;
+            return (
+              <div
+                key={metric.title}
+                className={`${metric.bgColor} ${metric.borderColor} border rounded-xl p-8 text-center hover:scale-105 transition-transform duration-300`}
+              >
+                <IconComponent className={`w-12 h-12 mx-auto mb-6 ${metric.color}`} />
+                <h3 className="font-bold text-2xl mb-3 leading-tight">{metric.title}</h3>
+                <p className="text-secondary text-base mb-4 leading-relaxed">{metric.subtitle}</p>
+                <div className={`text-4xl font-bold mb-3 ${metric.color}`}>
+                  {metric.value}
+                </div>
+                <p className="text-sm text-muted leading-relaxed">{metric.description}</p>
               </div>
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted leading-relaxed">{metric.description}</p>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <a 
             href="/performance" 
-            className="inline-flex items-center px-10 sm:px-12 lg:px-16 xl:px-20 py-5 sm:py-6 lg:py-8 xl:py-10 bg-accent text-accent-foreground rounded-2xl hover:bg-accent/90 transition-all duration-300 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold hover:shadow-lg hover:shadow-accent/20 w-full sm:w-auto"
+            className="inline-flex items-center px-8 py-4 bg-accent text-accent-foreground rounded-xl hover:bg-accent/90 transition-colors duration-300 text-lg font-semibold"
           >
             📈 View Detailed Performance Analysis
           </a>
-          <p className="text-secondary text-base sm:text-lg lg:text-xl xl:text-2xl mt-6 sm:mt-8 lg:mt-10 xl:mt-12 px-6 sm:px-8 lg:px-12 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-secondary mt-4 text-base">
             Explore comprehensive charts, datasets, and statistical analysis
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

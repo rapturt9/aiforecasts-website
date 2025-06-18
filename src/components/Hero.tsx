@@ -1,96 +1,46 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
       
-      <div className="max-w-8xl mx-auto py-40 sm:py-48 lg:py-56 xl:py-64 2xl:py-72 relative z-10 text-center">
-        <motion.div
-          className="space-y-20 sm:space-y-24 lg:space-y-32 xl:space-y-40 2xl:space-y-48"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-32 sm:py-40 lg:py-48 relative z-10">
+        <div className="text-center space-y-16 sm:space-y-20 lg:space-y-24">
           {/* Headline */}
-          <div className="space-y-12 sm:space-y-16 lg:space-y-20 xl:space-y-24 2xl:space-y-28">
-            <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-extrabold leading-[0.9] tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+          <div className="space-y-8 sm:space-y-12 lg:space-y-16">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-tight">
               Charting a{' '}
               <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">
                 Safer Future
               </span>
-            </motion.h1>
+            </h1>
             
-            <motion.p 
-              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-secondary leading-relaxed max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-secondary leading-relaxed max-w-5xl mx-auto">
               We use advanced AI and Structural Causal Models to predict the future with unprecedented accuracy, 
               providing open intelligence to help humanity navigate tomorrow's challenges.
-            </motion.p>
+            </p>
           </div>
 
           {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-10 sm:gap-12 lg:gap-16 xl:gap-20 justify-center items-center pt-16 sm:pt-20 lg:pt-24 xl:pt-28"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <button className="btn-primary flex items-center space-x-5 sm:space-x-6 lg:space-x-7 text-xl sm:text-2xl lg:text-3xl xl:text-4xl px-12 sm:px-14 lg:px-16 xl:px-20 py-6 sm:py-7 lg:py-8 xl:py-10 w-full sm:w-auto rounded-2xl">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-10 justify-center items-center pt-8 sm:pt-12 lg:pt-16">
+            <button className="btn-primary flex items-center space-x-3 sm:space-x-4 text-base sm:text-lg lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 w-full sm:w-auto rounded-xl">
               <span>See Our Predictions</span>
-              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             
             <a 
               href="#performance" 
-              className="btn-secondary flex items-center space-x-5 sm:space-x-6 lg:space-x-7 text-xl sm:text-2xl lg:text-3xl xl:text-4xl px-12 sm:px-14 lg:px-16 xl:px-20 py-6 sm:py-7 lg:py-8 xl:py-10 w-full sm:w-auto rounded-2xl"
+              className="btn-secondary flex items-center space-x-3 sm:space-x-4 text-base sm:text-lg lg:text-xl px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 w-full sm:w-auto rounded-xl"
             >
-              <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />
+              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>📊 View Performance</span>
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
-
-      {/* Floating elements for visual interest */}
-      <motion.div
-        className="absolute top-20 right-20 w-2 h-2 bg-accent rounded-full opacity-60"
-        animate={{
-          y: [0, -20, 0],
-          opacity: [0.6, 1, 0.6]
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-      />
-      <motion.div
-        className="absolute bottom-40 left-20 w-1 h-1 bg-purple-500 rounded-full opacity-40"
-        animate={{
-          y: [0, -15, 0],
-          opacity: [0.4, 0.8, 0.4]
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: 1
-        }}
-      />
     </section>
   );
 };

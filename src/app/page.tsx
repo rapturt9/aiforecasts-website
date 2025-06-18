@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main className="space-y-40 md:space-y-48 lg:space-y-56 xl:space-y-64 2xl:space-y-72">
+      <main className="space-y-16 sm:space-y-20 lg:space-y-24">
         <Hero />
         <div id="performance" className="scroll-mt-24">
           <KeyResults />
