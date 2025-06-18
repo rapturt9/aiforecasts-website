@@ -53,33 +53,34 @@ export const ValueProposition: React.FC = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden" id="our-mission">
+    <section className="py-24 sm:py-32 md:py-40 lg:py-48 xl:py-56 relative overflow-hidden px-4 sm:px-6 lg:px-8" id="our-mission">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-8xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20 sm:mb-24 lg:mb-32 xl:mb-40"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 sm:mb-8 lg:mb-10">
             A New Paradigm for{' '}
             <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">
               Global Foresight
             </span>
           </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto">
-            Our three-pillar approach combines cutting-edge AI with rigorous scientific methodology to create unprecedented insights into humanity&apos;s future.
+          <p className="text-lg sm:text-xl lg:text-2xl text-secondary max-w-5xl mx-auto leading-relaxed px-4 text-center">
+            Our three-pillar approach combines cutting-edge AI with rigorous scientific methodology 
+            to create unprecedented insights into humanity's future.
           </p>
         </motion.div>
 
         {/* Value Proposition Cards */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 xl:gap-20"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -88,29 +89,31 @@ export const ValueProposition: React.FC = () => {
           {valueProps.map((prop, index) => (
             <motion.div
               key={prop.title}
-              className="glass-card value-card p-8 text-center group"
+              className="glass-card value-card p-10 sm:p-12 lg:p-16 xl:p-20 text-center group"
               variants={itemVariants}
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-accent/10 rounded-full mb-6 sm:mb-8 lg:mb-10 group-hover:bg-accent/20 transition-colors duration-300">
                 <div className="value-icon text-accent transition-all duration-300">
-                  {prop.icon}
+                  <GitBranch className={`${index === 0 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
+                  <Zap className={`${index === 1 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
+                  <Globe className={`${index === 2 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-foreground mb-4">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 lg:mb-8">
                 {prop.title}
               </h3>
 
               {/* Description */}
-              <p className="text-secondary leading-relaxed">
+              <p className="text-secondary leading-relaxed text-sm sm:text-base lg:text-lg">
                 {prop.description}
               </p>
 
               {/* Decorative element */}
               <motion.div
-                className="w-12 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-6 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-12 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-6 sm:mt-8 lg:mt-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -122,14 +125,14 @@ export const ValueProposition: React.FC = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-20 sm:mt-24 lg:mt-32 xl:mt-40"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <a href="/methodology" className="btn-tertiary">
-            Learn More About Our Methodology
+          <a href="/methodology" className="btn-tertiary text-lg sm:text-xl lg:text-2xl xl:text-3xl px-10 sm:px-12 lg:px-16 xl:px-20 py-5 sm:py-6 lg:py-8 xl:py-10">
+            🔬 Explore Our Scientific Methodology
           </a>
         </motion.div>
       </div>

@@ -29,31 +29,31 @@ export const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
           <motion.div 
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-2 sm:space-x-3"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <Logo size="md" />
-            <div className="text-xl font-bold text-foreground">
+            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
               Forecast<span className="text-accent">Labs</span>
             </div>
           </motion.div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav className="hidden lg:flex items-center space-x-4 lg:space-x-6">
             {[
               { name: 'Our Mission', href: '#our-mission' },
-              { name: 'Performance', href: '#performance' },
+              { name: 'Performance', href: '/performance' },
               { name: 'Methodology', href: '/methodology' }
             ].map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="nav-link text-foreground font-medium"
+                className="nav-link text-foreground font-medium text-sm lg:text-base xl:text-lg"
               >
                 {item.name}
               </a>
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground hover:text-accent transition-colors duration-200"
+            className="lg:hidden p-2 text-foreground hover:text-accent transition-colors duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
           </button>
 
           {/* CTA Button - Desktop */}
-          <button className="btn-primary hidden md:block">
+          <button className="btn-primary hidden lg:block text-sm lg:text-base xl:text-lg px-4 lg:px-6 xl:px-8 py-2 lg:py-3 xl:py-4">
             Explore the Data
           </button>
         </div>
@@ -86,23 +86,23 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-6 py-4 space-y-4">
+            <div className="px-4 sm:px-6 py-6 space-y-6">
               {[
                 { name: 'Our Mission', href: '#our-mission' },
-                { name: 'Performance', href: '#performance' },
+                { name: 'Performance', href: '/performance' },
                 { name: 'Methodology', href: '/methodology' }
               ].map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block nav-link text-foreground font-medium"
+                  className="block nav-link text-foreground font-medium text-lg py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
               <button 
-                className="btn-primary w-full mt-4"
+                className="btn-primary w-full mt-6 text-lg py-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Explore the Data

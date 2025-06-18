@@ -11,22 +11,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main>
+      <main className="space-y-40 md:space-y-48 lg:space-y-56 xl:space-y-64 2xl:space-y-72">
         <Hero />
-        <KeyResults />
-        <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Detailed Performance Analysis</h2>
-              <p className="text-secondary text-lg max-w-2xl mx-auto">
-                Comprehensive evaluation across multiple datasets and prediction markets, 
-                with rigorous methodology to prevent data leakage.
-              </p>
-            </div>
-            <PerformanceChart />
-          </div>
-        </section>
-        <ValueProposition />
+        <div id="performance" className="scroll-mt-24">
+          <KeyResults />
+        </div>
+        <div id="our-mission" className="scroll-mt-24">
+          <ValueProposition />
+        </div>
       </main>
       <Footer />
     </div>

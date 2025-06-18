@@ -99,7 +99,7 @@ export const PerformanceChart: React.FC = () => {
     >
       <div className="text-center space-y-2 mb-6">
         <h3 className="text-2xl font-bold text-foreground">Forecasting Performance Comparison</h3>
-        <p className="text-muted">Mean Absolute Error (Lower is Better)</p>
+        <p className="text-muted">Average Brier Score (Lower is Better)</p>
         <p className="text-sm text-muted italic">
           Methodology: Models trained with cutoff before forecast dates, preventing data leakage
         </p>
