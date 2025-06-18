@@ -6,13 +6,13 @@ import Logo from './Logo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-16 border-t border-glass-border relative overflow-hidden">
+    <footer className="py-16 sm:py-20 lg:py-24 border-t border-glass-border relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-background" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center space-y-8"
+          className="text-center space-y-8 sm:space-y-10 lg:space-y-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -20,19 +20,19 @@ export const Footer: React.FC = () => {
         >
           {/* Logo and Brand */}
           <motion.div 
-            className="flex items-center justify-center space-x-3"
+            className="flex items-center justify-center space-x-3 sm:space-x-4"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <Logo size="lg" />
-            <div className="text-2xl font-bold text-foreground">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
               Forecast<span className="text-accent">Labs</span>
             </div>
           </motion.div>
 
           {/* Mission Statement */}
           <motion.p
-            className="text-secondary max-w-2xl mx-auto leading-relaxed"
+            className="text-secondary max-w-3xl mx-auto leading-relaxed text-sm sm:text-base lg:text-lg px-4"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
