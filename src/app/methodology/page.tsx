@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { ThemeProvider } from '@/components/ThemeProvider';
+
 import Link from 'next/link';
 import {
   Typography,
@@ -49,10 +49,9 @@ export default function MethodologyPage() {
   ];
 
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-gray-900 text-white">
-        <Header />
-        <main className="pt-24 pb-16">
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Header />
+      <main className="pt-24 pb-16">
         <div className="max-w-6xl mx-auto px-6">
           {/* Breadcrumb Navigation */}
           <div className="mb-8">
@@ -265,8 +264,8 @@ export default function MethodologyPage() {
             </div>
           </div>
         </div>
-        </main>
-        <Footer />
+      </main>
+      <Footer />
     </div>
   );
 }
