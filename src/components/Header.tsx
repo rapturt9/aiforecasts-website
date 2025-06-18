@@ -29,22 +29,22 @@ export const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6">
+      <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 py-5 sm:py-6 lg:py-8">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
           <motion.div 
-            className="flex items-center space-x-2 sm:space-x-3"
+            className="flex items-center space-x-3 sm:space-x-4"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <Logo size="md" />
-            <div className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground">
               Forecast<span className="text-accent">Labs</span>
             </div>
           </motion.div>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-4 lg:space-x-6">
+          <nav className="hidden lg:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
             {[
               { name: 'Our Mission', href: '#our-mission' },
               { name: 'Performance', href: '/performance' },

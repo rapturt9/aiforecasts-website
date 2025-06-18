@@ -38,9 +38,9 @@ export default function PerformancePage() {
           {/* Key Metrics Summary */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16 sm:mb-20 lg:mb-24">
             <div className="text-center p-6 sm:p-8 lg:p-10 bg-card rounded-xl border border-border">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4">+5.2%</div>
-              <div className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">Better than Superforecasters</div>
-              <div className="text-secondary text-sm sm:text-base">On Manifold Markets</div>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-green-400 mb-3 sm:mb-4">0.082</div>
+              <div className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">AI Brier Score</div>
+              <div className="text-secondary text-sm sm:text-base">vs 0.134 Human (Manifold)</div>
             </div>
             <div className="text-center p-6 sm:p-8 lg:p-10 bg-card rounded-xl border border-border">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4">1,000+</div>

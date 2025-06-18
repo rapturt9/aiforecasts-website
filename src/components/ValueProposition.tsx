@@ -60,19 +60,19 @@ export const ValueProposition: React.FC = () => {
       <div className="max-w-8xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20 sm:mb-24 lg:mb-32 xl:mb-40"
+          className="text-center mb-24 sm:mb-28 lg:mb-36 xl:mb-44 2xl:mb-52"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 sm:mb-8 lg:mb-10">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold text-foreground mb-8 sm:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 leading-tight">
             A New Paradigm for{' '}
             <span className="bg-gradient-to-r from-accent to-purple-500 bg-clip-text text-transparent">
               Global Foresight
             </span>
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-secondary max-w-5xl mx-auto leading-relaxed px-4 text-center">
+          <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-secondary max-w-6xl mx-auto leading-relaxed px-6 sm:px-8 lg:px-12 xl:px-16 text-center">
             Our three-pillar approach combines cutting-edge AI with rigorous scientific methodology 
             to create unprecedented insights into humanity's future.
           </p>
@@ -80,7 +80,7 @@ export const ValueProposition: React.FC = () => {
 
         {/* Value Proposition Cards */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-16 xl:gap-20"
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16 lg:gap-20 xl:gap-24 2xl:gap-28"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -89,31 +89,31 @@ export const ValueProposition: React.FC = () => {
           {valueProps.map((prop, index) => (
             <motion.div
               key={prop.title}
-              className="glass-card value-card p-10 sm:p-12 lg:p-16 xl:p-20 text-center group"
+              className="glass-card value-card p-12 sm:p-16 lg:p-20 xl:p-24 2xl:p-28 text-center group rounded-3xl"
               variants={itemVariants}
             >
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-accent/10 rounded-full mb-6 sm:mb-8 lg:mb-10 group-hover:bg-accent/20 transition-colors duration-300">
+              <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 2xl:w-36 2xl:h-36 bg-accent/10 rounded-full mb-8 sm:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 group-hover:bg-accent/20 transition-colors duration-300">
                 <div className="value-icon text-accent transition-all duration-300">
-                  <GitBranch className={`${index === 0 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
-                  <Zap className={`${index === 1 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
-                  <Globe className={`${index === 2 ? 'block' : 'hidden'} w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12`} />
+                  <GitBranch className={`${index === 0 ? 'block' : 'hidden'} w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 2xl:w-18 2xl:h-18`} />
+                  <Zap className={`${index === 1 ? 'block' : 'hidden'} w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 2xl:w-18 2xl:h-18`} />
+                  <Globe className={`${index === 2 ? 'block' : 'hidden'} w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 2xl:w-18 2xl:h-18`} />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-foreground mb-4 sm:mb-6 lg:mb-8">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-foreground mb-6 sm:mb-8 lg:mb-10 xl:mb-12 2xl:mb-16 leading-tight">
                 {prop.title}
               </h3>
 
               {/* Description */}
-              <p className="text-secondary leading-relaxed text-sm sm:text-base lg:text-lg">
+              <p className="text-secondary leading-relaxed text-base sm:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                 {prop.description}
               </p>
 
               {/* Decorative element */}
               <motion.div
-                className="w-12 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-6 sm:mt-8 lg:mt-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-16 h-1 bg-gradient-to-r from-accent to-purple-500 mx-auto mt-8 sm:mt-10 lg:mt-12 xl:mt-16 2xl:mt-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -125,13 +125,13 @@ export const ValueProposition: React.FC = () => {
 
         {/* Bottom CTA */}
         <motion.div
-          className="text-center mt-20 sm:mt-24 lg:mt-32 xl:mt-40"
+          className="text-center mt-24 sm:mt-28 lg:mt-36 xl:mt-44 2xl:mt-52"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <a href="/methodology" className="btn-tertiary text-lg sm:text-xl lg:text-2xl xl:text-3xl px-10 sm:px-12 lg:px-16 xl:px-20 py-5 sm:py-6 lg:py-8 xl:py-10">
+          <a href="/methodology" className="btn-tertiary text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl px-12 sm:px-16 lg:px-20 xl:px-24 2xl:px-28 py-6 sm:py-8 lg:py-10 xl:py-12 2xl:py-16 rounded-2xl">
             🔬 Explore Our Scientific Methodology
           </a>
         </motion.div>

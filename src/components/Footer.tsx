@@ -6,13 +6,13 @@ import Logo from './Logo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-16 sm:py-20 lg:py-24 border-t border-glass-border relative overflow-hidden">
+    <footer className="py-20 sm:py-24 lg:py-32 xl:py-40 border-t border-glass-border relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-background" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <motion.div
-          className="text-center space-y-8 sm:space-y-10 lg:space-y-12"
+          className="text-center space-y-12 sm:space-y-16 lg:space-y-20 xl:space-y-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
 
           {/* Mission Statement */}
           <motion.p
-            className="text-secondary max-w-3xl mx-auto leading-relaxed text-sm sm:text-base lg:text-lg px-4"
+            className="text-secondary max-w-4xl mx-auto leading-relaxed text-base sm:text-lg lg:text-xl xl:text-2xl px-6 sm:px-8"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

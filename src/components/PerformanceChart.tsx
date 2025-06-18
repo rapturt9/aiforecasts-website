@@ -145,7 +145,7 @@ export const PerformanceChart: React.FC = () => {
                     transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
                   >
                     <span className="text-xs font-medium text-white">
-                      {(item.human_mean * 100).toFixed(1)}%
+                      {item.human_mean.toFixed(3)}
                     </span>
                   </motion.div>
                 </div>
@@ -166,7 +166,7 @@ export const PerformanceChart: React.FC = () => {
                     transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
                   >
                     <span className="text-xs font-medium text-white">
-                      {(item.bot_mean * 100).toFixed(1)}%
+                      {item.bot_mean.toFixed(3)}
                     </span>
                   </motion.div>
                 </div>
@@ -179,7 +179,7 @@ export const PerformanceChart: React.FC = () => {
                     ? 'bg-accent/20 text-accent' 
                     : 'bg-red-500/20 text-red-400'
                 }`}>
-                  {item.difference > 0 ? '+' : ''}{(item.difference * 100).toFixed(1)}% vs humans
+                  {item.difference > 0 ? '+' : ''}{item.difference.toFixed(3)} vs humans
                 </span>
               </div>
             </div>

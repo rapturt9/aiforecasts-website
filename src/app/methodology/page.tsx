@@ -34,7 +34,7 @@ export default function MethodologyPage() {
                 Our <span className="text-accent">Methodology</span>
               </h1>
               
-              <p className="text-lg sm:text-xl lg:text-2xl text-secondary leading-relaxed max-w-4xl mx-auto px-4">
+              <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-secondary leading-relaxed max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 ForecastLabs employs rigorous scientific methodology based on ForecastBench, 
                 a dynamic benchmark that evaluates AI forecasting capabilities while preventing data leakage.
               </p>

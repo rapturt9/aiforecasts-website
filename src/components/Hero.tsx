@@ -10,17 +10,17 @@ export const Hero: React.FC = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
       
-      <div className="max-w-7xl mx-auto py-32 sm:py-40 lg:py-48 xl:py-56 relative z-10 text-center">
+      <div className="max-w-8xl mx-auto py-40 sm:py-48 lg:py-56 xl:py-64 2xl:py-72 relative z-10 text-center">
         <motion.div
-          className="space-y-16 sm:space-y-20 lg:space-y-24 xl:space-y-28"
+          className="space-y-20 sm:space-y-24 lg:space-y-32 xl:space-y-40 2xl:space-y-48"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {/* Headline */}
-          <div className="space-y-10 sm:space-y-12 lg:space-y-16 xl:space-y-20">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-20 xl:space-y-24 2xl:space-y-28">
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-tight"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-extrabold leading-[0.9] tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-lg sm:text-xl lg:text-2xl text-secondary leading-relaxed max-w-5xl mx-auto px-4 text-center"
+              className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-secondary leading-relaxed max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -44,21 +44,21 @@ export const Hero: React.FC = () => {
 
           {/* CTA Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row gap-8 sm:gap-10 lg:gap-12 justify-center items-center pt-12 sm:pt-16 lg:pt-20"
+            className="flex flex-col sm:flex-row gap-10 sm:gap-12 lg:gap-16 xl:gap-20 justify-center items-center pt-16 sm:pt-20 lg:pt-24 xl:pt-28"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="btn-primary flex items-center space-x-4 text-lg sm:text-xl lg:text-2xl px-10 sm:px-12 lg:px-14 py-5 sm:py-6 lg:py-7 w-full sm:w-auto">
+            <button className="btn-primary flex items-center space-x-5 sm:space-x-6 lg:space-x-7 text-xl sm:text-2xl lg:text-3xl xl:text-4xl px-12 sm:px-14 lg:px-16 xl:px-20 py-6 sm:py-7 lg:py-8 xl:py-10 w-full sm:w-auto rounded-2xl">
               <span>See Our Predictions</span>
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+              <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />
             </button>
             
             <a 
               href="#performance" 
-              className="btn-secondary flex items-center space-x-4 text-lg sm:text-xl lg:text-2xl px-10 sm:px-12 lg:px-14 py-5 sm:py-6 lg:py-7 w-full sm:w-auto"
+              className="btn-secondary flex items-center space-x-5 sm:space-x-6 lg:space-x-7 text-xl sm:text-2xl lg:text-3xl xl:text-4xl px-12 sm:px-14 lg:px-16 xl:px-20 py-6 sm:py-7 lg:py-8 xl:py-10 w-full sm:w-auto rounded-2xl"
             >
-              <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7" />
+              <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9" />
               <span>📊 View Performance</span>
             </a>
           </motion.div>
